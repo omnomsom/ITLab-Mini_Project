@@ -9,7 +9,13 @@
 </ul>
 
 <h1>Recipe:</h1>
-<pre>{{ recipetext }}</pre>
+<pre>
+  {% for recipe in recipes %}
+    {% for s in recipe %}
+    {{s}}<br>
+    {% endfor %}
+  {% endfor %}
+</pre>
 
 <style>
     h1 {
