@@ -20,8 +20,9 @@ def result(request):
         # Perform any additional processing with the selected checkboxes
         recipes = []
         for x in col2.find({'Ingredients':{'$all':selected_checkboxes}}):
-            x['Recipe'].insert(0, x['Title'])
-            recipes.append(x['Recipe'])
+            r = {'title':x['Title'], 'img':x['Image'],'det':x['Recipe']}
+            #x['Recipe'].insert(0, x['Title'])
+            recipes.append(r)
         #recipetext = " " #recipe should be in this variable
         #new_recipetext = recipetext.replace('Step', '\nStep')
  
