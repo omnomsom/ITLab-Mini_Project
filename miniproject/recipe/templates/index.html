@@ -29,6 +29,7 @@
     <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
     <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
     <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/logo.png' %}" type="image/icon type">
     <link href="{% static 'img/favicon.ico' %}" rel="icon">
     <!-- Icon Font Stylesheet -->
     <link href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css' %}"
@@ -50,8 +51,9 @@
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
             <a href="" class="navbar-brand p-0">
-                <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>IT Lab</h1>
-                <!-- <img src="static/img/logo.png" alt="Logo"> -->
+
+                <h1 class="text-primary m-0"><img src="static/img/logo.png" alt="Logo" class="navbar-logo"> IT Lab</h1>
+
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -72,7 +74,10 @@
                     </div>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="" class="btn btn-primary py-2 px-4">Start Cooking</a>
+
+                <form method="get" action="#ing-div">
+                    <button type="submit" class="btn btn-primary py-2 px-4">Start Cooking</button>
+                </form>
             </div>
         </nav>
         {% block content %}
@@ -84,8 +89,10 @@
                         <p class="text-white animated slideInLeft mb-4 pb-2">Tempor erat elitr rebum at clita. Diam
                             dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed
                             stet lorem sit clita duo justo magna dolore erat amet</p>
-                        <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Start
-                            Cooking</a>
+                        <form method="get" action="#ing-div">
+                            <button type="submit"
+                                class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Start Cooking</button>
+                        </form>
                     </div>
                     <div class="col-lg-6 text-center text-lg-end">
                         <img src="static/img/hero.png" alt="">
@@ -96,7 +103,7 @@
     </div>
     <!-- Navbar & Hero End -->
 
-    <div class="container-fluid text-center title-div wow fadeInUp" data-wow-delay="0.1s">
+    <div id="ing-div" class="container-fluid text-center title-div wow fadeInUp" data-wow-delay="0.1s">
         <h1> Choose your ingredients!</h1>
     </div>
 
@@ -107,72 +114,157 @@
 
             <div class="row row-food wow fadeInUp" data-wow-delay="0.1s">
                 <div id="potato" class="food-div col d-flex flex-column align-items-center">
-                    <input type="checkbox" name="potato" id="potato" class="hidden-checkbox">
+                    <input type="checkbox" name="Potato" id="potato" class="hidden-checkbox">
                     <div class="img-div">
                         <img src="static/img/potato.png" alt="">
                     </div>
                     <p class="text-center food-title">Potato</p>
                 </div>
-                <div id="cauliflower" class="food-div col d-flex flex-column align-items-center">
-                    <input type="checkbox" name="cauli" id="cauli" class="hidden-checkbox">
+                <div id="cabbage" class="food-div col d-flex flex-column align-items-center">
+                    <input type="checkbox" name="Cabbage" id="cabbage" class="hidden-checkbox">
                     <div class="img-div">
-                        <img src="static/img/cauli.png" alt="">
+                        <img src="static/img/cabbage.png" alt="">
                     </div>
-                    <p class="text-center food-title">Cauliflower</p>
+                    <p class="text-center food-title">Cabbage</p>
                 </div>
                 <div id="onion" class="food-div col d-flex flex-column align-items-center">
-                    <input type="checkbox" name="onion" id="onion" class="hidden-checkbox">
+                    <input type="checkbox" name="Onions" id="onion" class="hidden-checkbox">
                     <div class="img-div">
                         <img src="static/img/onion.png" alt="">
                     </div>
                     <p class="text-center food-title">Onion</p>
                 </div>
                 <div id="tomato" class="food-div col d-flex flex-column align-items-center">
+                    <input type="checkbox" name="Tomato" id="tomato" class="hidden-checkbox">
                     <div class="img-div">
                         <img src="static/img/tomato.png" alt="">
                     </div>
                     <p class="text-center food-title">Tomato</p>
                 </div>
-                <div id="carrot" class="food-div col d-flex flex-column align-items-center">
+                <div id="beans" class="food-div col d-flex flex-column align-items-center">
+                    <input type="checkbox" name="French Beans" id="beans" class="hidden-checkbox">
                     <div class="img-div">
-                        <img src="static/img/carrot.png" alt="">
+                        <img src="static/img/beans.png" alt="">
                     </div>
-                    <p class="text-center food-title">Carrot</p>
+                    <p class="text-center food-title">French Beans</p>
                 </div>
             </div>
 
             <div class="row row-food wow fadeInUp" data-wow-delay="0.3s">
                 <div class="food-div col  d-flex flex-column align-items-center">
+                    <input type="checkbox" name="Beetroot" id="Beetroot" class="hidden-checkbox">
                     <div class="img-div">
-                        <img src="static/img/capsicum.png" alt="">
+                        <img src="static/img/beetroot.png" alt="">
                     </div>
-                    <p class=" text-center food-title">Capsicum</p>
+                    <p class=" text-center food-title">Beetroot</p>
                 </div>
                 <div class="food-div col  d-flex flex-column align-items-center">
+                    <input type="checkbox" name="Garlic" id="garlic" class="hidden-checkbox">
                     <div class="img-div">
                         <img src="static/img/garlic.png" alt="">
                     </div>
                     <p class=" text-center food-title">Garlic</p>
                 </div>
                 <div class="food-div col  d-flex flex-column align-items-center">
+                    <input type="checkbox" name="Rice" id="rice" class="hidden-checkbox">
                     <div class="img-div">
-                        <img src="static/img/mushroom.png" alt="">
+                        <img src="static/img/rice.png" alt="">
                     </div>
-                    <p class=" text-center food-title">Mushroom</p>
+                    <p class=" text-center food-title">Rice</p>
                 </div>
                 <div class="food-div col  d-flex flex-column align-items-center">
+                    <input type="checkbox" name="Paneer" id="paneer" class="hidden-checkbox">
                     <div class="img-div">
                         <img src="static/img/paneer.png" alt="">
                     </div>
                     <p class=" text-center food-title">Paneer</p>
                 </div>
                 <div class="food-div col  d-flex flex-column align-items-center">
+                    <input type="checkbox" name="Curd" id="curd" class="hidden-checkbox">
                     <div class="img-div">
-                        <img src="static/img/brinjal.png" alt="">
+                        <img src="static/img/curd.png" alt="">
                     </div>
-                    <p class=" text-center food-title">Brinjal</p>
+                    <p class=" text-center food-title">Curd</p>
                 </div>
             </div>
+
+
+            <div class="row row-food wow fadeInUp" data-wow-delay="0.1s">
+                <div id="chicken" class="food-div col d-flex flex-column align-items-center">
+                    <input type="checkbox" name="Chicken" id="chicken" class="hidden-checkbox">
+                    <div class="img-div">
+                        <img src="static/img/chicken.png" alt="">
+                    </div>
+                    <p class="text-center food-title">Chicken</p>
+                </div>
+                <div id="chillies" class="food-div col d-flex flex-column align-items-center">
+                    <input type="checkbox" name="Green Chillies" id="green ghillies" class="hidden-checkbox">
+                    <div class="img-div">
+                        <img src="static/img/chilli.png" alt="">
+                    </div>
+                    <p class="text-center food-title">Green Chillies</p>
+                </div>
+                <div id="curd" class="food-div col d-flex flex-column align-items-center">
+                    <input type="checkbox" name="Cream" id="cream" class="hidden-checkbox">
+                    <div class="img-div">
+                        <img src="static/img/cream.png" alt="">
+                    </div>
+                    <p class="text-center food-title">Cream</p>
+                </div>
+                <div id="coconut" class="food-div col d-flex flex-column align-items-center">
+                    <input type="checkbox" name="Butter" id="butter" class="hidden-checkbox">
+                    <div class="img-div">
+                        <img src="static/img/butter.png" alt="">
+                    </div>
+                    <p class="text-center food-title">Butter</p>
+                </div>
+                <div id="rice" class="food-div col d-flex flex-column align-items-center">
+                    <input type="checkbox" name="Fruits" id="fruits" class="hidden-checkbox">
+                    <div class="img-div">
+                        <img src="static/img/fruit.png" alt="">
+                    </div>
+                    <p class="text-center food-title">Fruits</p>
+                </div>
+            </div>
+
+            <div class="row row-food wow fadeInUp" data-wow-delay="0.3s">
+                <div class="food-div col  d-flex flex-column align-items-center">
+                    <input type="checkbox" name="Capsicum" id="capsicum" class="hidden-checkbox">
+                    <div class="img-div">
+                        <img src="static/img/capsicum.png" alt="">
+                    </div>
+                    <p class=" text-center food-title">Capsicum</p>
+                </div>
+                <div class="food-div col  d-flex flex-column align-items-center">
+                    <input type="checkbox" name="Bread" id="bread" class="hidden-checkbox">
+                    <div class="img-div">
+                        <img src="static/img/bread.png" alt="">
+                    </div>
+                    <p class=" text-center food-title">Bread</p>
+                </div>
+                <div class="food-div col  d-flex flex-column align-items-center">
+                    <input type="checkbox" name="Lemon" id="lemon" class="hidden-checkbox">
+                    <div class="img-div">
+                        <img src="static/img/lemon.png" alt="">
+                    </div>
+                    <p class=" text-center food-title">Lemon</p>
+                </div>
+                <div class="food-div col  d-flex flex-column align-items-center">
+                    <input type="checkbox" name="Maida" id="maida" class="hidden-checkbox">
+                    <div class="img-div">
+                        <img src="static/img/flour.png" alt="">
+                    </div>
+                    <p class=" text-center food-title">Maida</p>
+                </div>
+                <div class="food-div col  d-flex flex-column align-items-center">
+                    <input type="checkbox" name="Cheese" id="cheese" class="hidden-checkbox">
+                    <div class="img-div">
+                        <img src="static/img/cheese.png" alt="">
+                    </div>
+                    <p class=" text-center food-title">Cheese</p>
+                </div>
+            </div>
+
             <div class="button-div wow fadeInUp" data-wow-delay="0.5s">
                 <input class="btn btn-primary py-2 px-4" id="submit-btn" type="submit" value="Submit">
             </div>

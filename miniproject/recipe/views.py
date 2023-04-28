@@ -5,8 +5,9 @@ def index(request):
 
 def result(request):
     if request.method == 'POST':
+        print(request.POST)
         selected_checkboxes = []
-        checkbox_names = ['potato', 'cauli', 'onion']
+        checkbox_names = ['Potato', 'Cabbage', 'Onions', 'Tomato', 'French Beans', 'Beetroot', 'Garlic', 'Rice', 'Paneer', 'Curd', 'Chicken', 'Green Chillies', 'Cream', 'Butter', 'Fruits', 'Capsicum', 'Bread', 'Lemon', 'Maida', 'Cheese']
         for checkbox_name in checkbox_names:
             if checkbox_name in request.POST:
                 selected_checkboxes.append(checkbox_name)
