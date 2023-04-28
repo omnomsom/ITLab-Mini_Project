@@ -1,0 +1,240 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <title>Restoran - Bootstrap Restaurant Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- JavaScript Libraries -->
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <link href="{% static 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css' %}"
+        rel="stylesheet">
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/moment.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+    <!-- Icon Font Stylesheet -->
+    <link href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css' %}"
+        rel="stylesheet">
+    <link href="{% static 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css' %}"
+        rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Template Stylesheet -->
+</head>
+
+
+<body>
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>IT Lab</h1>
+                <!-- <img src="static/img/logo.png" alt="Logo"> -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0 pe-4">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="service.html" class="nav-item nav-link">Service</a>
+                    <a href="menu.html" class="nav-item nav-link">Menu</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="booking.html" class="dropdown-item">Booking</a>
+                            <a href="team.html" class="dropdown-item">Our Team</a>
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="" class="btn btn-primary py-2 px-4">Start Cooking</a>
+            </div>
+        </nav>
+
+        <div class="container-fluid py-1 bg-dark hero-header">
+            <div class="container my-5 py-2">
+                <div class="row row-riya align-items-center">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <h1 class="display-3 text-white animated slideInLeft">Recipe<br>Generator</h1>
+                        <p class="text-white animated slideInLeft mb-4 pb-2">Tempor erat elitr rebum at clita. Diam
+                            dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed
+                            stet lorem sit clita duo justo magna dolore erat amet</p>
+                        <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Start
+                            Cooking</a>
+                    </div>
+                    <div class="col-lg-6 text-center text-lg-end">
+                        <img src="static/img/hero.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <div class="container-fluid text-center title-div wow fadeInUp" data-wow-delay="0.1s">
+        <h1> Choose your ingredients!</h1>
+    </div>
+
+    <div class="container-fluid">
+
+        <form action="{% url 'result' %}" method="POST" autocomplete="off">
+            {% csrf_token %}
+
+            <div class="row row-food wow fadeInUp" data-wow-delay="0.1s">
+                <div id="potato" class="food-div col d-flex flex-column align-items-center">
+                    <input type="checkbox" name="potato" id="potato" class="hidden-checkbox">
+                    <div class="img-div">
+                        <img src="static/img/potato.png" alt="">
+                    </div>
+                    <p class="text-center food-title">Potato</p>
+                </div>
+                <div id="cauliflower" class="food-div col d-flex flex-column align-items-center">
+                    <input type="checkbox" name="cauli" id="cauli" class="hidden-checkbox">
+                    <div class="img-div">
+                        <img src="static/img/cauli.png" alt="">
+                    </div>
+                    <p class="text-center food-title">Cauliflower</p>
+                </div>
+                <div id="onion" class="food-div col d-flex flex-column align-items-center">
+                    <input type="checkbox" name="onion" id="onion" class="hidden-checkbox">
+                    <div class="img-div">
+                        <img src="static/img/onion.png" alt="">
+                    </div>
+                    <p class="text-center food-title">Onion</p>
+                </div>
+                <div id="tomato" class="food-div col d-flex flex-column align-items-center">
+                    <div class="img-div">
+                        <img src="static/img/tomato.png" alt="">
+                    </div>
+                    <p class="text-center food-title">Tomato</p>
+                </div>
+                <div id="carrot" class="food-div col d-flex flex-column align-items-center">
+                    <div class="img-div">
+                        <img src="static/img/carrot.png" alt="">
+                    </div>
+                    <p class="text-center food-title">Carrot</p>
+                </div>
+            </div>
+
+            <input id="submit-btn" type="submit" value="Submit">
+        </form>
+
+
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row row-food wow fadeInUp" data-wow-delay="0.3s">
+            <div class="food-div col  d-flex flex-column align-items-center">
+                <div class="img-div">
+                    <img src="static/img/capsicum.png" alt="">
+                </div>
+                <p class=" text-center food-title">Capsicum</p>
+            </div>
+            <div class="food-div col  d-flex flex-column align-items-center">
+                <div class="img-div">
+                    <img src="static/img/garlic.png" alt="">
+                </div>
+                <p class=" text-center food-title">Garlic</p>
+            </div>
+            <div class="food-div col  d-flex flex-column align-items-center">
+                <div class="img-div">
+                    <img src="static/img/mushroom.png" alt="">
+                </div>
+                <p class=" text-center food-title">Mushroom</p>
+            </div>
+            <div class="food-div col  d-flex flex-column align-items-center">
+                <div class="img-div">
+                    <img src="static/img/paneer.png" alt="">
+                </div>
+                <p class=" text-center food-title">Paneer</p>
+            </div>
+            <div class="food-div col  d-flex flex-column align-items-center">
+                <div class="img-div">
+                    <img src="static/img/brinjal.png" alt="">
+                </div>
+                <p class=" text-center food-title">Brinjal</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" style="background-color: red">
+
+        <button type="submit">Submit</button>
+
+    </div>
+
+    <!-- Service Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
+                            <h5>Master Chefs</h5>
+                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-utensils text-primary mb-4"></i>
+                            <h5>Quality Food</h5>
+                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-cart-plus text-primary mb-4"></i>
+                            <h5>Online Order</h5>
+                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-headset text-primary mb-4"></i>
+                            <h5>24/7 Service</h5>
+                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+    <!-- Template Javascript -->
+</body>
+
+</html>
