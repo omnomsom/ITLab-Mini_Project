@@ -75,7 +75,7 @@
                 <a href="" class="btn btn-primary py-2 px-4">Start Cooking</a>
             </div>
         </nav>
-
+        {% block content %}
         <div class="container-fluid py-1 bg-dark hero-header">
             <div class="container my-5 py-2">
                 <div class="row row-riya align-items-center">
@@ -141,53 +141,44 @@
                 </div>
             </div>
 
-            <input id="submit-btn" type="submit" value="Submit">
+            <div class="row row-food wow fadeInUp" data-wow-delay="0.3s">
+                <div class="food-div col  d-flex flex-column align-items-center">
+                    <div class="img-div">
+                        <img src="static/img/capsicum.png" alt="">
+                    </div>
+                    <p class=" text-center food-title">Capsicum</p>
+                </div>
+                <div class="food-div col  d-flex flex-column align-items-center">
+                    <div class="img-div">
+                        <img src="static/img/garlic.png" alt="">
+                    </div>
+                    <p class=" text-center food-title">Garlic</p>
+                </div>
+                <div class="food-div col  d-flex flex-column align-items-center">
+                    <div class="img-div">
+                        <img src="static/img/mushroom.png" alt="">
+                    </div>
+                    <p class=" text-center food-title">Mushroom</p>
+                </div>
+                <div class="food-div col  d-flex flex-column align-items-center">
+                    <div class="img-div">
+                        <img src="static/img/paneer.png" alt="">
+                    </div>
+                    <p class=" text-center food-title">Paneer</p>
+                </div>
+                <div class="food-div col  d-flex flex-column align-items-center">
+                    <div class="img-div">
+                        <img src="static/img/brinjal.png" alt="">
+                    </div>
+                    <p class=" text-center food-title">Brinjal</p>
+                </div>
+            </div>
+            <div class="button-div wow fadeInUp" data-wow-delay="0.5s">
+                <input class="btn btn-primary py-2 px-4" id="submit-btn" type="submit" value="Submit">
+            </div>
         </form>
-
-
     </div>
 
-
-    <div class="container-fluid">
-        <div class="row row-food wow fadeInUp" data-wow-delay="0.3s">
-            <div class="food-div col  d-flex flex-column align-items-center">
-                <div class="img-div">
-                    <img src="static/img/capsicum.png" alt="">
-                </div>
-                <p class=" text-center food-title">Capsicum</p>
-            </div>
-            <div class="food-div col  d-flex flex-column align-items-center">
-                <div class="img-div">
-                    <img src="static/img/garlic.png" alt="">
-                </div>
-                <p class=" text-center food-title">Garlic</p>
-            </div>
-            <div class="food-div col  d-flex flex-column align-items-center">
-                <div class="img-div">
-                    <img src="static/img/mushroom.png" alt="">
-                </div>
-                <p class=" text-center food-title">Mushroom</p>
-            </div>
-            <div class="food-div col  d-flex flex-column align-items-center">
-                <div class="img-div">
-                    <img src="static/img/paneer.png" alt="">
-                </div>
-                <p class=" text-center food-title">Paneer</p>
-            </div>
-            <div class="food-div col  d-flex flex-column align-items-center">
-                <div class="img-div">
-                    <img src="static/img/brinjal.png" alt="">
-                </div>
-                <p class=" text-center food-title">Brinjal</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid" style="background-color: red">
-
-        <button type="submit">Submit</button>
-
-    </div>
 
     <!-- Service Start -->
     <div class="container-fluid py-5">
@@ -233,7 +224,7 @@
         </div>
     </div>
     <!-- Service End -->
-
+    {% endblock %}
     <!-- Template Javascript -->
 </body>
 

@@ -53,7 +53,7 @@
     height: 200px;
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
     color: #000000;
-    transition: .5s;
+    transition: .2s;
     border-radius: 10px; 
     margin-right: 10px;
     margin-left: 10px;
@@ -61,24 +61,33 @@
     padding-bottom: 5px;
 }
 
+.food-div:hover {
+    transform: scale(1.05); /* Increase the scale factor as desired */
+  }
+
+
+  .img-div img:hover {
+    object-fit: contain;
+  }
+  
 .food-div-clicked{
     background: var(--primary);
     color: var(--light) ;
 }
 
+
+
 .hidden-checkbox {
     opacity: 0;
 }
 
-.img-div img{
-    transition: transform 0.3s ease;
-  }
 
-  .img-div img:hover {
-    transform: scale(1.1); /* Increase the scale factor as desired */
-    object-fit: contain;
-  }
-
+.button-div{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .ff-secondary {
     font-family: 'Pacifico', cursive;
 }
