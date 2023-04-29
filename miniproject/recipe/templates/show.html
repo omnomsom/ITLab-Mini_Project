@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+
+<div id="ing-div" class="container-fluid text-center title-div wow fadeInUp" data-wow-delay="0.1s">
+  <h1>User Recipes</h1>
+</div>
+      <div>
+        {% for entry in entries %}
+           <h3>{{entry.Title}}</h3><br>
+           <h4>{{entry.Category}}</h4><br>
+           <p>{{entry.Recipe}}</p><br>
+        {% endfor %}           
+      </div>
+    
+
+{% endblock %}
