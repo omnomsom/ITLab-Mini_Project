@@ -160,7 +160,10 @@
     border-radius: 2px;
 }
 
+.navaddbtn{
+margin: 20px 10px;
 
+}
 /*** Navbar ***/
 .navbar-dark .navbar-nav .nav-link {
     position: relative;
@@ -254,6 +257,7 @@
 .breadcrumb-item + .breadcrumb-item::before {
     color: rgba(255, 255, 255, .5);
 }
+
 
 
 /*** Section Title ***/
