@@ -1,5 +1,7 @@
 from django.shortcuts import render
 import pymongo
+from recipe.models import Recipe, RecipeForm
+from django.http import HttpResponseRedirect
 
 def index(request):
     return render(request, 'index.html')
@@ -33,3 +35,16 @@ def result(request):
         return render(request, 'result.html', context)
     
     return render(request, 'test.html')
+
+def add(request):
+  entries = Recipe.objects.all()[:10]
+  return render(request, 'add.html', {'entries':entries,'form':RecipeForm()})
+
+def add_recipe(request):
+   if request.method == 'POST':
+      form = RecipeForm(request.POST)
+      if form.is_valid():
+        entry = form.save()
+   return HttpResponseRedirect('/')
+
+
