@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Restoran - Bootstrap Restaurant Template</title>
+    <title>FindADish</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -59,21 +59,10 @@
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0 pe-4">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Service</a>
-                    <a href="menu.html" class="nav-item nav-link">Menu</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="booking.html" class="dropdown-item">Booking</a>
-                            <a href="team.html" class="dropdown-item">Our Team</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                </div>
+                <div class="navbar-nav ms-auto py-0 pe-4">               
+                    <form action='/add'>
+                     <button type='submit' class="btn btn-primary py-2 px-4">Add Your Own Recipe</button>
+                    </form>
 
                 <form method="get" action="#ing-div">
                     <button type="submit" class="btn btn-primary py-2 px-4">Start Cooking</button>
@@ -166,11 +155,11 @@
                     <p class=" text-center food-title">Garlic</p>
                 </div>
                 <div class="food-div col  d-flex flex-column align-items-center">
-                    <input type="checkbox" name="Rice" id="rice" class="hidden-checkbox">
+                    <input type="checkbox" name="Basmati Rice" id="rice" class="hidden-checkbox">
                     <div class="img-div">
                         <img src="static/img/rice.png" alt="">
                     </div>
-                    <p class=" text-center food-title">Rice</p>
+                    <p class=" text-center food-title">Basmati Rice</p>
                 </div>
                 <div class="food-div col  d-flex flex-column align-items-center">
                     <input type="checkbox" name="Paneer" id="paneer" class="hidden-checkbox">
@@ -198,7 +187,7 @@
                     <p class="text-center food-title">Chicken</p>
                 </div>
                 <div id="chillies" class="food-div col d-flex flex-column align-items-center">
-                    <input type="checkbox" name="Green Chillies" id="green ghillies" class="hidden-checkbox">
+                    <input type="checkbox" name="Green Chilli" id="green ghillies" class="hidden-checkbox">
                     <div class="img-div">
                         <img src="static/img/chilli.png" alt="">
                     </div>
