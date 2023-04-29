@@ -1,8 +1,42 @@
 {% extends "index.html" %}
+{% load static %}
 {% block content %}
-  <form action="/recipe/add_recipe/" method=post style="margin-left:auto; margin-right:auto;">{% csrf_token %}
-    <table style="margin-left:auto; margin-right:auto;">{{ form }}</table><br>
-    <input type=submit value="Add Recipe" align="center">
-  </form>
-{% endblock %}
 
+<div id="ing-div" class="container-fluid text-center title-div wow fadeInUp" data-wow-delay="0.1s">
+  <h1> Have a Recipe? Add it!</h1>
+</div>
+
+<div class="row">
+  <div class="col addimg">
+    <img src="{% static 'img/addrecipe.png' %}" alt="recipe">
+  </div>
+  <div class="col form-div">
+    <div id="feedback-form">
+      <h2 class="header">Recipe</h2>
+      <div>
+        <form>
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" placeholder="Enter title">
+          </div>
+          <div class="form-group">
+            <label for="category">Category</label>
+            <input type="text" class="form-control" id="category" placeholder="Indian, Chinese, Italian...">
+          </div>
+          <div class="form-group">
+            <label for="recipetext">Recipe</label>
+            <textarea class="form-control" id="recipetext" rows="3" placeholder="Paste your recipe!"></textarea>
+          </div>
+          <button type="submit" id="subrec" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<form action="/recipe/add_recipe/" method=post style="margin-left:auto; margin-right:auto;">{% csrf_token %}
+  <table style="margin-left:auto; margin-right:auto;">{{ form }}</table><br>
+  <input type=submit value="Add Recipe" align="center">
+</form>
+{% endblock %}
