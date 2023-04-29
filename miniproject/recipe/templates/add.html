@@ -1,0 +1,8 @@
+{% extends "index.html" %}
+{% block content %}
+  <form action="/recipe/add_recipe/" method=post style="margin-left:auto; margin-right:auto;">{% csrf_token %}
+    <table style="margin-left:auto; margin-right:auto;">{{ form }}</table><br>
+    <input type=submit value="Add Recipe" align="center">
+  </form>
+{% endblock %}
+
